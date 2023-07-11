@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Time Chronicle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="preloader"></div>
+
+<body class="bg-dark text-light">
+    <div class="container">
+        <h1 class="h1 display-3 mt-5">Age Calculator</h1>
+        <div class="mt-4">
+            <label for="dob">Enter your date of birth:</label>
+            <div class="row">
+                <div class="col">
+                    <input type="number" id="day" class="form-control" placeholder="Day" min="1" max="31">
+                </div>
+                <div class="col">
+                    <input type="number" id="month" class="form-control" placeholder="Month" min="1" max="12">
+                </div>
+                <div class="col">
+                    <input type="number" id="year" class="form-control" placeholder="Year" min="1900" max="2023">
+                </div>
+            </div>
+        </div>
+        <button class="btn mt-4  btn-light" onclick="calculateAge()">Calculate Age</button>
+        <div id="result" class="mt-4"></div>
+        <button class="btn toggle-theme-btn  btn-light" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <img id="timeImg" class="mt-5 img-fluid pt-5" style="position: fixed; top: 50%; right: 41.5%;" src="time.gif" alt="time">
+    <h3 class="display-6 mt-3 p-4 text-center text-success">Click the clock for a surprise</h3>
+
+    <script src="script.js"></script>
+
+    <script>
+
+        function toggleTheme() {
+            // Toggle the background classes for the body element
+            document.body.classList.toggle('bg-light'); // Toggle between bg-light and bg-dark classes for the body element
+            document.body.classList.toggle('bg-dark');
+            // The toggle removes the class if it is found and adds the class if it is not found
+
+            // Toggle the text classes for the body element
+            document.body.classList.toggle('text-light'); // Toggle between text-light and text-dark classes for the body element
+            document.body.classList.toggle('text-dark');
+
+            // Get all the buttons on the page
+            var buttons = document.querySelectorAll('button');
+
+            // Toggle the btn-dark and btn-light classes for each button
+            buttons.forEach(function (button) {
+                button.classList.toggle('btn-dark'); // Toggle between btn-dark and btn-light classes for each button
+                button.classList.toggle('btn-light');
+            });
+        }
+
+
+        document.getElementById("timeImg").addEventListener("click", function () {
+            var dayInput = document.getElementById("day");
+            var monthInput = document.getElementById("month");
+            var yearInput = document.getElementById("year");
+
+            // Generate random values
+            var randomDay = Math.floor(Math.random() * 31) + 1; // Random day between 1 and 31
+            var randomMonth = Math.floor(Math.random() * 12) + 1; // Random month between 1 and 12
+            var randomYear = Math.floor(Math.random() * (2023 - 1900 + 1)) + 1900; // Random year between 1900 and 2023
+
+            // Fill the form fields with random values
+            dayInput.value = randomDay;
+            monthInput.value = randomMonth;
+            yearInput.value = randomYear;
+        });
+
+    </script>
+
+</body>
+
+</html>

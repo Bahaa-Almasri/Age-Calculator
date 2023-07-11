@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px 2px black;
+    /* Add black shadow to the input fields */
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.toggle-theme-btn {
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+    height: 10%;
+    width: 10%;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+#preloader {
+    background: white url(preloader.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-color: #212529;
+}
